@@ -1,0 +1,32 @@
+{
+  "how_to_clean_ice_cream_machine": {
+    "en": [
+      "1. Turn off and unplug the machine",
+      "2. Remove leftover mix with spatula",
+      "3. Run cleaning cycle with approved solution",
+      "4. Sanitize all parts",
+      "5. Air dry completely"
+    ],
+    "es": [
+      "1. Apagar y desenchufar la máquina",
+      "2. Retirar restos con espátula",
+      "3. Ejecutar ciclo de limpieza con solución aprobada",
+      "4. Desinfectar todas las partes",
+      "5. Secar completamente al aire"
+    ],
+    "cs": [
+      "1. Vypněte a odpojte přístroj",
+      "2. Odstraňte zbytky směsi špachtlí",
+      "3. Spusťte čisticí cyklus s aprobovaným roztokem",
+      "4. Dezinfikujte všechny části",
+      "5. Důkladně osušte"
+    ],
+    "uk": [
+      "1. Вимкніть і відключіть апарат",
+      "2. Видаліть залишки суміші шпателем",
+      "3. Запустіть цикл очищення зі схваленим розчином",
+      "4. Продезінфікуйте всі частини",
+      "5. Повністю висушіть на повітрі"
+    ]
+  }
+}

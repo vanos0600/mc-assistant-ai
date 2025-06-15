@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍔 McD Assistant PRO</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animación de papas fritas de fondo -->
+  <div class="fries-animation">
+    <div class="fry"></div>
+    <div class="fry"></div>
+    <div class="fry"></div>
+  </div>
+
+  <!-- McAssistant animado -->
+  <img src="https://khatech.com/wp-content/uploads/2020/09/logo-cua-mcdonalds-khatech.png" alt="McAssistant" class="mc-assistant" />
+
+  <div class="menu-container">
+    <header class="menu-header">
+      <h1 class="menu-title">
+        <span class="gold-text">McD</span> 
+        <span class="red-text">Assistant</span>
+        <span class="animated-logo">🍟</span>
+      </h1>
+      <div class="language-selector">
+        <select id="language" class="gold-select">
+          <option value="en">🇬🇧 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="cs">🇨🇿 Čeština</option>
+          <option value="uk">🇺🇦 Українська</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="quick-actions">
+      <button class="menu-button" id="cleaning-procedure-btn">
+        🧼 <span>Cleaning Protocol</span>
+        <div class="button-shine"></div>
+      </button>
+      <button class="menu-button" id="emergency-contacts-btn">
+        📞 <span>Emergency Contacts</span>
+        <div class="button-shine"></div>
+      </button>
+    </div>
+
+    <div id="chat" class="chat-box">
+      <div class="chat-items">
+        <!-- Mensajes se insertarán aquí -->
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <div class="input-group">
+        <input 
+          type="text" 
+          id="question" 
+          placeholder="Ask your question..." 
+          class="gold-input"
+        />
+        <button class="bigmac-button" onclick="ask()">
+          🍔 Ask
+          <div class="button-particles"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
