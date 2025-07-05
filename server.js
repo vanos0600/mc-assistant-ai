@@ -1,183 +1,75 @@
-// ✅ McD Employee Assistant - Servidor limpio y funcional
-
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import { OpenAI } from 'openai';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-import { networkInterfaces } from 'os';
-
-// 🗂 Configurar rutas base
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// 📦 Cargar configuración y archivos de conocimiento
-dotenv.config();
-const procedures = JSON.parse(readFileSync(join(__dirname, 'knowledge', 'procedures.json'), 'utf-8'));
-const contacts = JSON.parse(readFileSync(join(__dirname, 'knowledge', 'contacts.json'), 'utf-8'));
-
-// 🚀 Configurar servidor Express
+require('dotenv').config();
+const express = require('express');
+const path = require('path');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// Para node-fetch v3 (ESM), import dinámico:
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
+// Middleware
 app.use(express.json());
-app.use(express.static(join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// 🌐 Obtener IP local para mostrar en consola
-const getLocalIp = (() => {
-  let cachedIp = null;
-  return () => {
-    if (cachedIp) return cachedIp;
-    const interfaces = networkInterfaces();
-    for (const name of Object.keys(interfaces)) {
-      for (const iface of interfaces[name]) {
-        if (iface.family === 'IPv4' && !iface.internal) {
-          cachedIp = iface.address;
-          return cachedIp;
-        }
-      }
+app.post('/api/ask', async (req, res) => {
+  const { question } = req.body;
+
+  if (!question) {
+    return res.status(400).json({ error: 'No question provided.' });
+  }
+
+  console.log('API Key:', process.env.OPENAI_API_KEY ? '✅ Loaded' : '❌ Not Loaded');
+
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [{ role: 'user', content: question }],
+        max_tokens: 200
+      })
+    });
+
+    if (!response.ok) {
+      const errorDetails = await response.json();
+      console.error('OpenAI API responded with error:', errorDetails);
+      return res.status(response.status).json({ error: errorDetails });
     }
-    cachedIp = 'localhost';
-    return cachedIp;
-  };
-})();
 
-// 🩺 Endpoint de salud del servidor
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', ip: getLocalIp(), version: '1.0.0' });
+    const data = await response.json();
+    const answer = data.choices?.[0]?.message?.content || 'No response from AI.';
+    res.json({ data: answer });
+
+  } catch (error) {
+    console.error('Unexpected error calling AI API:', error);
+    res.status(500).json({ error: 'Error connecting to AI API.', details: error.message });
+  }
 });
 
-// 🌍 Servir la interfaz
-app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'public', 'index.html'), (err) => {
-    if (err) {
-      console.error('Error al servir index.html:', err.message);
-      res.status(404).send('Archivo no encontrado');
+// Contactos de emergencia
+app.get('/api/contacts/:lang', (req, res) => {
+  const lang = req.params.lang || 'en';
+  const data = {
+    manager: 'Luis Hernández',
+    emergency: {
+      en: 'Call 112 or contact shift manager.',
+      es: 'Llama al 112 o contacta al gerente de turno.',
+      cs: 'Zavolejte 112 nebo kontaktujte vedoucího směny.',
+      uk: 'Зателефонуйте 112 або зв’яжіться з менеджером зміни.'
     }
+  };
+
+  res.json({
+    manager: data.manager,
+    emergency: data.emergency[lang] || data.emergency['en']
   });
 });
 
-// 📞 Ruta para obtener contactos por idioma
-app.get('/api/contacts/:lang', (req, res) => {
-  const lang = req.params.lang;
-  res.json(contacts[lang] || { error: 'Idioma no disponible' });
-});
-
-// 💬 Ruta para procesar preguntas de empleados
-app.post('/api/ask', async (req, res) => {
-  const { question, lang = 'en' } = req.body;
-
-  try {
-    if (typeof question !== 'string') {
-      return res.status(400).json({ error: getErrorMessage(lang), details: 'Formato de pregunta inválido' });
-    }
-
-    const lowerQ = question.toLowerCase().trim();
-    const localAnswer = procedures[lowerQ]?.[lang];
-    if (localAnswer) return res.json({ type: 'manual', data: localAnswer });
-
-    if (!process.env.OPENAI_API_KEY) {
-      return res.status(500).json({ error: getErrorMessage(lang), details: 'Falta la clave de OpenAI' });
-    }
-
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-    const systemMessages = {
-      en: 'You are a helpful assistant for company procedures. Answer concisely and clearly.',
-      es: 'Eres un asistente útil para los procedimientos de la empresa. Responde de forma concisa y clara.',
-      cs: 'Jste užitečný asistent pro firemní postupy. Odpovídejte stručně a jasně.',
-      uk: 'Ви корисний помічник для процедур компанії. Відповідайте коротко і чітко.'
-    };
-
-    const maxTokens = Math.max(200, 4096 - question.length - 50);
-
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: [
-        { role: 'system', content: systemMessages[lang] || systemMessages.en },
-        { role: 'user', content: question }
-      ],
-      temperature: 0.7,
-      max_tokens: maxTokens
-    });
-
-    const answer = completion.choices[0]?.message?.content || getErrorMessage(lang);
-    res.json({ type: 'ai', data: answer });
-
-  } catch (err) {
-    console.error('❌ Error en /api/ask:', err);
-    res.status(500).json({ error: getErrorMessage(lang), details: err.message });
-  }
-});
-
-// 🛑 Función para mensajes de error por idioma
-function getErrorMessage(lang) {
-  const errors = {
-    en: 'Service unavailable, try again later',
-    es: 'Servicio no disponible, intenta nuevamente',
-    cs: 'Služba není dostupná, zkuste to později',
-    uk: 'Сервіс недоступний, спробуйте пізніше'
-  };
-  return errors[lang] || errors.en;
-}
-
-// 🟢 Iniciar servidor
-app.listen(port, '0.0.0.0', () => {
-  console.log(`✅ Servidor activo:
-- Local: http://localhost:${port}
-- Red: http://${getLocalIp()}:${port}`);
-});
-
-// Test básico
-app.get('/test', (req, res) => {
-  res.send('✅ ¡El servidor funciona correctamente!');
-});
-
-app.post('/api/ask', async (req, res) => {
-  const { question, lang = 'en' } = req.body;
-  console.log('🔍 Pregunta:', question);
-
-  try {
-    if (typeof question !== 'string') {
-      console.log('⚠️ Pregunta inválida');
-      return res.status(400).json({ error: getErrorMessage(lang), details: 'Formato de pregunta inválido' });
-    }
-
-    const localAnswer = procedures[question.toLowerCase()?.trim()]?.[lang];
-    if (localAnswer) {
-      console.log('📘 Respuesta local encontrada');
-      return res.json({ type: 'manual', data: localAnswer });
-    }
-
-    if (!process.env.OPENAI_API_KEY) {
-      console.log('❌ Falta clave de OpenAI');
-      return res.status(500).json({ error: getErrorMessage(lang), details: 'Falta la clave de OpenAI' });
-    }
-
-    console.log('🧠 Solicitando respuesta a OpenAI...');
-
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: [
-        { role: 'system', content: 'You are a helpful assistant for McDonald’s employees. Answer clearly and concisely.' },
-        { role: 'user', content: question }
-      ],
-      temperature: 0.5,
-      max_tokens: 300
-    });
-
-    console.log('✅ Respuesta de OpenAI recibida');
-
-    const answer = completion.choices[0]?.message?.content || getErrorMessage(lang);
-    res.json({ type: 'ai', data: answer });
-
-  } catch (err) {
-    console.error('❌ Error capturado:', err);
-    res.status(500).json({ error: getErrorMessage(lang), details: err.message });
-  }
+// Start server
+app.listen(PORT, () => {
+  console.log(`✅ Server running at http://localhost:${PORT}`);
 });
