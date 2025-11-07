@@ -1,0 +1,66 @@
+{
+  "manual_cocina": {
+    "parrilla_plancha": {
+      "carne_10_1_regular": {
+        "es": "Carne 10:1 (Regular): 8 por plancha. Tiempo: 40 seg. Presionar con prensa. Sazonar después de voltear.",
+        "en": "10:1 Meat (Regular): 8 per platen. Time: 40 sec. Press with grill press. Season after flipping.",
+        "cs": "Maso 10:1 (Běžné): 8 na gril. Čas: 40 sekund. Stiskněte lisem. Okořenit po otočení.",
+        "uk": "М'ясо 10:1 (Звичайне): 8 на гриль. Час: 40 сек. Притиснути пресом. Приправити після перевертання."
+      },
+      "carne_4_1_cuarto_libra": {
+        "es": "Carne 4:1 (Cuarto de Libra): 4 por plancha. Tiempo: 102 seg. Sazonar solo la carne cruda. No presionar.",
+        "en": "4:1 Meat (Quarter Pounder): 4 per platen. Time: 102 sec. Season only raw meat. Do not press.",
+        "cs": "Maso 4:1 (Quarter Pounder): 4 na gril. Čas: 102 sekund. Okořenit pouze syrové maso. Netlačit.",
+        "uk": "М'ясо 4:1 (Чвертьфунтовий): 4 на гриль. Час: 102 сек. Приправити лише сире м'ясо. Не притискати."
+      },
+      "pollo_crispy_grilled": {
+        "es": "Pollo (Crispy/Grilled): Cocinar en la plancha designada. Tiempo: variable según equipo. Revisar temperatura interna.",
+        "en": "Chicken (Crispy/Grilled): Cook on designated platen. Time: varies by equipment. Check internal temperature.",
+        "cs": "Kuře (Crispy/Grilled): Vařte na určeném grilu. Čas: liší se podle vybavení. Zkontrolujte vnitřní teplotu.",
+        "uk": "Курка (Crispy/Grilled): Готувати на спеціальному грилі. Час: залежить від обладнання. Перевірити внутрішню температуру."
+      }
+    },
+    "freidoras": {
+      "papas_fritas": {
+        "es": "Papas Fritas: Cesta mediana. 3:05 minutos. Sacudir a los 30 seg. Caducidad en UHC: 7 minutos.",
+        "en": "French Fries: Medium basket. 3:05 minutes. Shake at 30 sec. UHC Hold time: 7 minutes.",
+        "cs": "Hranolky: Střední koš. 3:05 minuty. Protřepat po 30 s. Doba držení v UHC: 7 minut.",
+        "uk": "Картопля Фрі: Середній кошик. 3:05 хвилини. Струсити через 30 сек. Час зберігання в UHC: 7 хвилин."
+      },
+      "mcpollo_nuggets": {
+        "es": "McPollo / Nuggets: Usar cesta designada. Tiempo: 3:30 min (Nuggets), 4:00 min (McPollo). Caducidad en UHC: 20 min (Nuggets), 30 min (McPollo).",
+        "en": "McChicken / Nuggets: Use designated basket. Time: 3:30 min (Nuggets), 4:00 min (McChicken). UHC Hold time: 20 min (Nuggets), 30 min (McChicken).",
+        "cs": "McChicken / Nuggets: Použijte určený koš. Čas: 3:30 min (Nuggets), 4:00 min (McChicken). Doba držení v UHC: 20 min (Nuggets), 30 min (McChicken).",
+        "uk": "МакЧікен / Нагетси: Використовуйте окремий кошик. Час: 3:30 хв (Нагетси), 4:00 хв (МакЧікен). Час зберігання в UHC: 20 хв (Нагетси), 30 хв (МакЧікен)."
+      }
+    },
+    "mesa_montaje_uhc": {
+      "uhc_gabinete_caliente": {
+        "es": "UHC: Respetar los tiempos de caducidad. Primeras entradas, primeras salidas (FIFO). Nunca mezclar lotes.",
+        "en": "UHC: Respect holding times. First In, First Out (FIFO). Never mix batches.",
+        "cs": "UHC: Dodržujte doby držení. První dovnitř, první ven (FIFO). Nikdy nemíchejte šarže.",
+        "uk": "UHC: Дотримуйтесь часу зберігання. Першим прийшов, першим пішов (FIFO). Ніколи не змішуйте партії."
+      },
+      "tostadora_panes": {
+        "es": "Tostadora: Regular (Big Mac, Cuarto). Corona (arriba): 17 seg. Base (abajo): 22 seg. Ajustar compresión diariamente.",
+        "en": "Toaster: Regular (Big Mac, Quarter bun). Crown (top): 17 sec. Heel (bottom): 22 sec. Adjust compression daily.",
+        "cs": "Toustovač: Běžný (Big Mac, Quarter houska). Koruna (horní): 17 s. Spodek (dolní): 22 s. Denně upravujte kompresi.",
+        "uk": "Тостер: Звичайний (Булка Біг Мак, Квотер). Корона (верх): 17 сек. Основа (низ): 22 сек. Щодня регулюйте стиснення."
+      }
+    },
+    "higiene_seguridad": {
+      "lavado_manos": {
+        "es": "Lavado de manos: Obligatorio cada 30 minutos y al cambiar de estación. Usar jabón bactericida por 20 segundos.",
+        "en": "Hand Washing: Mandatory every 30 minutes and when changing stations. Use bactericidal soap for 20 seconds.",
+        "cs": "Mytí rukou: Povinné každých 30 minut a při změně stanoviště. Použijte baktericidní mýdlo po dobu 20 sekund.",
+        "uk": "Миття рук: Обов'язкове кожні 30 хвилин та при зміні станції. Використовувати бактерицидне мило протягом 20 секунд."
+      },
+      "caducidad_uat": {
+        "es": "Caducidad UAT (Usar Antes De): Marcar todos los productos refrigerados (queso, lechuga, salsas) al abrirlos. Respetar las horas de caducidad secundarias.",
+        "en": "UAT (Use-After-Thaw/Open): Label all refrigerated products (cheese, lettuce, sauces) when opened. Respect secondary shelf life.",
+        "cs": "UAT (Použít po otevření): Označte všechny chlazené produkty (sýr, salát, omáčky) při otevření. Dodržujte sekundární dobu použitelnosti.",
+        "uk": "Маркування (Використати До): Маркуйте всі охолоджені продукти (сир, салат, соуси) при відкритті. Дотримуйтесь вторинного терміну придатності."
+      }
+    }
+  }
+}

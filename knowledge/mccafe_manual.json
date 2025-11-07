@@ -1,0 +1,46 @@
+{
+  "manual_mccafe": {
+    "maquina_espresso": {
+      "calibracion_espresso": {
+        "es": "Calibración Espresso: Realizar diariamente. Un disparo doble (doppio) debe durar 22-28 segundos y producir 60ml (2 oz). Ajustar molienda si es necesario.",
+        "en": "Espresso Calibration: Perform daily. A double shot (doppio) should last 22-28 seconds and produce 60ml (2 oz). Adjust grind size if needed.",
+        "cs": "Kalibrace Espressa: Provádějte denně. Dvojitá dávka (doppio) by měla trvat 22-28 sekund a vyprodukovat 60 ml. V případě potřeby upravte hrubost mletí.",
+        "uk": "Калібрування Еспресо: Проводити щодня. Подвійна порція (доппіо) має екстрагуватися 22-28 секунд і мати об'єм 60 мл. За потреби відрегулюйте помел."
+      },
+      "limpieza_maquina": {
+        "es": "Limpieza Máquina: 'Backflush' con pastilla limpiadora al cierre. Purgar y limpiar el vaporizador (lanceta) después de CADA uso.",
+        "en": "Machine Cleaning: 'Backflush' with cleaning tablet at closing. Purge and wipe the steam wand after EVERY use.",
+        "cs": "Čištění kávovaru: 'Zpětný proplach' s čisticí tabletou při zavírání. Parní trysku profouknout a otřít po KAŽDÉM použití.",
+        "uk": "Чищення машини: 'Зворотне промивання' з таблеткою для чищення при закритті. Продувати та протирати паровий кран (стімер) після КОЖНОГО використання."
+      }
+    },
+    "leche_vaporizacion": {
+      "cappuccino_espuma": {
+        "es": "Espumar Cappuccino: Jarra fría. Leche entera. Introducir aire al inicio (sonido 'tsss') hasta crear espuma densa (tipo merengue). Temp. máx: 65°C.",
+        "en": "Cappuccino Frothing: Cold pitcher. Whole milk. Introduce air at the beginning ('tsss' sound) to create thick foam (meringue-like). Max temp: 65°C.",
+        "cs": "Pěnění Cappuccino: Studená konvička. Plnotučné mléko. Na začátku přivést vzduch (zvuk 'tsss') k vytvoření husté pěny (jako pusinky). Max. teplota: 65°C.",
+        "uk": "Збивання Капучино: Холодний пітчер. Цільне молоко. Впустити повітря на початку (звук 'тссс') для створення густої піни (як безе). Макс. температура: 65°C."
+      },
+      "latte_microespuma": {
+        "es": "Espumar Latte: Jarra fría. Introducir muy poco aire al inicio. Calentar creando un remolino (micro-espuma ligera, tipo pintura húmeda). Temp. máx: 65°C.",
+        "en": "Latte Frothing: Cold pitcher. Introduce very little air at the beginning. Heat by creating a vortex (light micro-foam, like wet paint). Max temp: 65°C.",
+        "cs": "Pěnění Latte: Studená konvička. Na začátku přivést velmi málo vzduchu. Zahřívejte vytvořením víru (lehká mikropěna, jako mokrá barva). Max. teplota: 65°C.",
+        "uk": "Збивання Лате: Холодний пітчер. Впустити дуже мало повітря на початку. Гріти, створюючи вир (легка мікропіна, як мокра фарба). Макс. температура: 65°C."
+      }
+    },
+    "bebidas_frias_pasteleria": {
+      "frappe_smoothie": {
+        "es": "Frappé/Smoothie: Respetar las medidas exactas de hielo, base líquida y sabor. Usar el programa correcto en la batidora (blender).",
+        "en": "Frappé/Smoothie: Respect exact measurements for ice, liquid base, and flavor. Use the correct program on the blender.",
+        "cs": "Frappé/Smoothie: Dodržujte přesné míry ledu, tekutého základu a příchutě. Použijte správný program na mixéru.",
+        "uk": "Фрапе/Смузі: Дотримуйтесь точних пропорцій льоду, рідкої основи та смаку. Використовуйте правильну програму на блендері."
+      },
+      "exhibicion_pasteles": {
+        "es": "Exhibición Pastelería: Usar siempre pinzas. Rotación FIFO (Primeras entradas, primeras salidas). Revisar caducidad al abrir y al cerrar.",
+        "en": "Pastry Display: Always use tongs. FIFO rotation (First In, First Out). Check expiration dates at opening and closing.",
+        "cs": "Vystavení pečiva: Vždy používejte kleště. Rotace FIFO (První dovnitř, první ven). Kontrolujte data spotřeby při otevírání a zavírání.",
+        "uk": "Викладка випічки: Завжди використовуйте щипці. Ротація FIFO (Першим прийшов, першим пішов). Перевіряйте терміни придатності при відкритті та закритті."
+      }
+    }
+  }
+}

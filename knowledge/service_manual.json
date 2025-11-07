@@ -1,0 +1,48 @@
+{
+  "manual_servicio_cliente": {
+    "mostrador_caja": {
+      "bienvenida_6_pasos": {
+        "es": "Bienvenida (6 Pasos): 1. Saludo cordial (sonreír). 2. Tomar pedido. 3. Venta sugestiva (agrandar/postre). 4. Repetir pedido. 5. Recibir pago. 6. Despedida amable.",
+        "en": "Welcome (6 Steps): 1. Warm greeting (smile). 2. Take order. 3. Suggestive sell (upsize/dessert). 4. Repeat order. 5. Receive payment. 6. Friendly farewell.",
+        "cs": "Přivítání (6 kroků): 1. Srdečný pozdrav (úsměv). 2. Přijetí objednávky. 3. Doplňkový prodej (zvětšit/dezert). 4. Zopakování objednávky. 5. Přijetí platby. 6. Přátelské rozloučení.",
+        "uk": "Привітання (6 кроків): 1. Щире привітання (посмішка). 2. Прийняти замовлення. 3. Пропозиція допродажу (збільшити/десерт). 4. Повторити замовлення. 5. Отримати оплату. 6. Дружнє прощання."
+      },
+      "venta_sugestiva_upsell": {
+        "es": "Venta Sugestiva: Siempre ofrecer agrandar el menú (papas/bebida). Ofrecer un postre (McFlurry, Sundae) o un complemento (Nuggets).",
+        "en": "Suggestive Selling (Upsell): Always offer to upgrade the menu (fries/drink). Offer a dessert (McFlurry, Sundae) or an add-on (Nuggets).",
+        "cs": "Doplňkový prodej (Upsell): Vždy nabídněte zvětšení menu (hranolky/nápoj). Nabídněte dezert (McFlurry, Sundae) nebo doplněk (Nuggets).",
+        "uk": "Пропозиція Допродажу (Upsell): Завжди пропонуйте збільшити меню (картопля/напій). Запропонуйте десерт (МакФлурі, Сандей) або додаток (Нагетси)."
+      }
+    },
+    "automac_mcdrive": {
+      "toma_pedido_drive": {
+        "es": "Toma Pedido (McDrive): Rápido, claro y amigable. Repetir el pedido y el total. 'Su total es [TOTAL]. Le esperamos en la siguiente ventanilla'.",
+        "en": "Order Taking (McDrive): Fast, clear, and friendly. Repeat the order and the total. 'Your total is [TOTAL]. We'll see you at the next window'.",
+        "cs": "Příjem objednávky (McDrive): Rychle, jasně a přátelsky. Zopakujte objednávku a celkovou částku. 'Vaše celková částka je [TOTAL]. Uvidíme se u dalšího okénka'.",
+        "uk": "Прийом замовлення (МакДрайв): Швидко, чіtko та дружелюбно. Повторіть замовлення та загальну суму. 'Ваша загальна сума [TOTAL]. Чекаємо на вас у наступному вікні'."
+      },
+      "ventanilla_entrega": {
+        "es": "Ventanilla Entrega: Confirmar pedido con el ticket. Entregar bebidas primero, luego comida caliente. Revisar salsas y servilletas. Despedirse amablemente.",
+        "en": "Delivery Window: Confirm order with the receipt. Deliver drinks first, then hot food. Check for sauces and napkins. Say a friendly goodbye.",
+        "cs": "Výdejní okénko: Potvrďte objednávku podle účtenky. Nejprve podejte nápoje, pak teplé jídlo. Zkontrolujte omáčky a ubrousky. Přátelsky se rozlučte.",
+        "uk": "Вікно видачі: Перевірте замовлення за чеком. Спочатку видайте напої, потім гарячу їжу. Перевірте соуси та серветки. Ввічливо попрощайтеся."
+      }
+    },
+    "salon_lobby": {
+      "limpieza_salon": {
+        "es": "Limpieza Salón (Lobby): Limpiar mesas inmediatamente después de que el cliente se vaya. Revisar basureros cada 30 min. Barrer el suelo. Baños cada 30 min.",
+        "en": "Lobby Cleaning: Clean tables immediately after customer leaves. Check trash bins every 30 min. Sweep the floor. Restrooms every 30 min.",
+        "cs": "Úklid lobby: Stoly uklízejte ihned po odchodu zákazníka. Kontrolujte odpadkové koše každých 30 min. Zameťte podlahu. Toalety každých 30 min.",
+        "uk": "Прибирання залу (Лобі): Прибирайте столи одразу, як клієнт пішов. Перевіряйте сміттєві баки кожні 30 хв. Підмітайте підлогу. Туалети кожні 30 хв."
+      }
+    },
+    "manejo_quejas": {
+      "metodo_lee": {
+        "es": "Manejo Quejas (Método L.E.E): 1. Lamentar (Pedir disculpas). 2. Escuchar (Entender el problema real). 3. Entender/Resolver (Ofrecer solución rápida, ej: cambiar producto). Siempre informar al Gerente.",
+        "en": "Complaint Handling (L.E.R. Method): 1. Lament (Apologize). 2. Empathize (Understand the real problem). 3. Resolve (Offer a quick solution, e.g., replace product). Always inform the Manager.",
+        "cs": "Řešení stížností (Metoda L.E.R): 1. Litovat (Omluvit se). 2. Empatizovat (Pochopit skutečný problém). 3. Řešit (Nabídnout rychlé řešení, např. výměna produktu). Vždy informujte manažera.",
+        "uk": "Розгляд скарг (Метод L.E.R): 1. Співчувати (Вибачитися). 2. Емпатія (Зрозуміти справжню проблему). 3. Вирішити (Запропонувати швидке рішення, напр., замінити продукт). Завжди повідомляти менеджера."
+      }
+    }
+  }
+}
