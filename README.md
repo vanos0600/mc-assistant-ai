@@ -22,29 +22,7 @@ Production Ready: Configured for easy deployment on hosting platforms like Rende
 
 Tech Stack
 
-Component
-
-Technology
-
-Backend
-
-Node.js, Express.js
-
-AI Model
-
-Google Gemini 2.5 Flash
-
-AI SDK
-
-@google/generative-ai
-
-Environment
-
-Node.js 20.x (LTS)
-
-Deployment
-
-Render (Recommended)
+The tech stack features a secure backend built on Node.js and Express.js. The core intelligence is powered by Google's Gemini 2.5 Flash model, integrated via the official @google/generative-ai SDK. The application runs in a stable Node.js 20.x (LTS) environment and is optimized for deployment on Render.
 
 Getting Started
 
@@ -123,4 +101,4 @@ Key: GEMINI_API_KEY
 
 Value: AIzaSy...your_key_here
 
-Render will automatically deploy your application using the stable Node.js version (20.x) specified in package.json./mc-assisten-ai.git
+Render will automatically deploy your application using the stable Node.js version (20.x) specified in package.json.
