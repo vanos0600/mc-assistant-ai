@@ -1,6 +1,6 @@
 McD Assistant: AI-Powered Employee Assistant
 
-Live Prototype: https://tu-url-de-render.onrender.com (Reemplaza esto con la URL de tu deploy)
+Live Prototype: https://tu-url-de-render.onrender.com 
 
 1- Overview
 
@@ -31,11 +31,11 @@ Follow these instructions to get a local copy of the project up and running for 
 
 4. Prerequisites
 
-- Node.js (v20.x recommended)
+ 1 - Node.js (v20.x recommended)
 
-- Git
+ 2 - Git
 
-- A Google Gemini API Key from Google AI Studio
+ 3 - A Google Gemini API Key from Google AI Studio
 
 
 
@@ -48,15 +48,13 @@ cd mc-assisten-ai
 
 6 - Install dependencies:
 
-- npm install
+npm install
 
+ Configure Environment: Create a file named .env in the root of the project. This file is critical for storing your secret API key. touch .env
 
-- Configure Environment: Create a file named .env in the root of the project. This file is critical for storing your secret API key. touch .env
+Open the .env file and add your Gemini API key. Ensure there are no quotes or spaces.
 
-
-- Open the .env file and add your Gemini API key. Ensure there are no quotes or spaces.
-
-- GEMINI_API_KEY=AIzaSy...your_key_here
+GEMINI_API_KEY=AIzaSy...your_key_here
   
 - PORT=3000
 
@@ -70,7 +68,7 @@ npm start
 
 The server will start on http://localhost:3000. You can now send requests to the POST /api/ask endpoint using a tool like Postman or by connecting the frontend.
 
-7 . Populating the Knowledge Base
+7 - Populating the Knowledge Base
 
 This assistant's intelligence comes from the files in the /knowledge directory:
 
@@ -84,9 +82,9 @@ Ensure these files are populated with your specific internal data for the RAG sy
 
 This application is ready to be deployed to a "Web Service" host like Render.
 
-- Push to GitHub: Ensure your repository is up-to-date on GitHub.
+Push to GitHub: Ensure your repository is up-to-date on GitHub.
 
-- Create a new Web Service on Render:
+Create a new Web Service on Render:
 
 1- Connect your GitHub repository.
 
@@ -97,8 +95,8 @@ This application is ready to be deployed to a "Web Service" host like Render.
 4 - Add Environment Variables:
 In the Render dashboard under "Environment", add your secret API key:
 
-- Key: GEMINI_API_KEY
+9 - Key: GEMINI_API_KEY
 
-- Value: AIzaSy...your_key_here
+10 - Render will automatically deploy your application using the stable Node.js version (20.x) specified in package.json.
 
-- Render will automatically deploy your application using the stable Node.js version (20.x) specified in package.json.
+Made by Oskar David Vanegas Juarez 
