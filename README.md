@@ -1,6 +1,6 @@
 McD Assistant: AI-Powered Employee Assistant
 
-Live Prototype: https://tu-url-de-render.onrender.com 
+Live Prototype: https://mc-assisten-ai.onrender.com/ 
 
 1- Overview
 
